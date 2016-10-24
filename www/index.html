@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <!-- fonts -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <link href="css/headroom.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script type="text/javascript" src="js/util/ng-cordova.min.js"></script>
+    <script src="cordova.js"></script>
+    <!-- your app's js -->
+    <script type="text/javascript" src="js/util/angular-sanitize.min.js"></script>
+    <!--CONTROLLERS-->
+    <script type="text/javascript" src="js/controllers/controllers.js"></script>
+    <script type="text/javascript" src="js/controllers/headerController.js"></script>
+    <script type="text/javascript" src="js/controllers/documentsController.js"></script>
+    <script type="text/javascript" src="js/controllers/projectsController.js"></script>
+    <script type="text/javascript" src="js/controllers/newsController.js"></script>
+    <script type="text/javascript" src="js/controllers/newsViewController.js"></script>
+    <script type="text/javascript" src="js/controllers/DocViewController.js"></script>
+    <script type="text/javascript" src="js/util/angular-route.min.js"></script>
+    <!--SERVICES-->
+    <script type="text/javascript" src="js/services/services-main.js"></script>
+    <script type="text/javascript" src="js/services/service-documents.js"></script>
+    <script type="text/javascript" src="js/services/service-projects.js"></script>
+    <script type="text/javascript" src="js/services/service-news.js"></script>
+    <script   src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/util/headroom.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/headroom/0.7.0/jQuery.headroom.js"></script>
+    <script src="js/logic.js"></script>
+    <script src="js/app.js"></script>
+  </head>
+  <body ng-app="femeApp">
+  <div class="all-content">
+            <header id="main-head" class="header--fixed slide" ng-controller="headerController">
+                <div class="container">
+                    <img src="img/logos/menuLogo.png" class="img-responsive pull-left">
+                    <i class="fa fa-bars pull-right toggle-nav"></i>
+                    <i class="fa fa-arrow-left pull-right back-button" ng-click='back()'></i>
+                </div>
+                <div class="cf"></div>
+            </header>
+            <div id="main-wrapper">
+                <div id="content-wrapper">
+                    <div id="menu-wrapper">
+                        <div id="offNav-wrapper">
+                            <section id="menuLvl1">
+                                <ul class="offNav">
+                                    <h3 class="mTittle toggle-nav" id="mainMenuBtn">Menu</h3>
+                                    <li><a href="#/projects" class="toggle-nav">Proyectos <i class="fa fa-arrow-right pull-right"></i></a></li>
+                                    <li><a href="#/documents" class="toggle-nav">Documentos <i class="fa fa-arrow-right pull-right"></i></a></li>
+                                    <li><a href="#/news" class="toggle-nav">Noticias <i class="fa fa-arrow-right pull-right"></i></a></li>
+                                    <li><a href="#/contact" class="toggle-nav">Contacto <i class="fa fa-arrow-right pull-right"></i></a></li>
+                                </ul> 
+                            </section><!--
+                            <section id="menuLvl2">
+                                <ul class="offNav">
+                                    <li class="mTtittle" id="backL2">Back <i class="fa fa-arrow-left pull-right"></i></li>
+                                    <li id="">Link<i class="fa fa-arrow-right pull-right"></i></li>
+                                    <li><a href="">Link <i class="fa fa-arrow-right pull-right"></i></a></li>
+                                    <li><a href="">Link <i class="fa fa-arrow-right pull-right"></i></a></li>
+                                    <li><a href="">Link <i class="fa fa-arrow-right pull-right"></i></a></li>
+                                </ul> 
+                            </section>-->
+                        </div>
+                    </div>
+                    <div id="main-cont">
+                        <div id="blur"></div>
+                        <!--<div class="container container1">
+                            <img src="img/jumbos.jpg" style="width: 100%;margin: 0 auto;" alt="" class="img-responsive">
+                        </div>-->
+                        <div class="homeCont container" ng-view>
+                        </div>
+                        <!-- boton back to top 
+                            <a href="#0" class="cd-top">Top<p>Subir</p></a>-->
+                        <!---->     
+                    </div> 
+                </div>
+            </div>
+            <!--<footer>
+                <div class="top">
+                    <div class="container">
+                        <p></p>
+                        <p></p>
+                        <p></p>
+                    </div>
+                </div>
+                <div class="bottom">
+                    <div class="container">
+                    </div> 
+                </div>            
+            </footer>-->
+        </div>
+  <!--
+    <ion-pane>
+      <ion-header-bar class="bar-stable">
+        <h1 class="title">Ionic Blank Starter</h1>
+      </ion-header-bar>
+      <ion-content>
+      </ion-content>
+    </ion-pane>-->
+  </body>
+</html>

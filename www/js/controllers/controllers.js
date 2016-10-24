@@ -1,0 +1,1 @@
+var femetromAppControllers = angular.module("femetromAppControllers", ['ngAnimate', 'ngSanitize']);

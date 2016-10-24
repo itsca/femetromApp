@@ -1,0 +1,20 @@
+<section class="documentsPage">
+	<div class="search">
+		<div class="blueBorder">
+			<div class="top">
+				<h1><span>Noticias</span></h1>
+			</div>
+			<div class="bottom">
+				<ul class="newsList">
+			        <li ng-animate="animate" class="docu" ng-repeat="item in news">
+			            <h2>{{item.title}}</h2>
+			            <p ng-bind-html="item.field_fecha_noticia"></p>
+			            <p>{{item.field_cuerpo_noticia}}</p>
+			            <img ng-if="item.field_imagen_noticia" src="{{item.field_imagen_noticia}}" alt="">
+			            <button ng-if="item.field_ver_mas" ng-click="openNews(item.field_ver_mas)">Ver Más</button>
+			        </li>
+			    </ul>
+			</div>
+		</div>
+    </div> 
+</section>

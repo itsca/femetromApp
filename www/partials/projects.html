@@ -1,0 +1,23 @@
+<section class="documentsPage">
+	<div class="search">
+		<div class="blueBorder">
+			<div class="top">
+				<h1><span>Proyectos</span></h1>
+				<div class="contrl-group contrl-lv1">
+					<label for="docName">Buscar por Nombre</label>
+		        	<input ng-model="query" type="text" placeholder="Nombre del Documento" name="docName">
+				</div>
+			</div>
+			<div class="bottom">
+				<ul class="docList">
+			        <li ng-animate="animate" class="docu" ng-repeat="item in projects | filter: query | filter: showType | orderBy: docOrder">
+			            <h2>{{item.title}}</h2>
+			            <h3>Estado:</h3>
+			            <p ng-bind-html="item.field_situacion_actual"></p>
+			            <button ng-click="downloadDocument(item.field_pdf_del_proyecto, item.nid)">Ver Proyecto</button>
+			        </li>
+			    </ul>
+			</div>
+		</div>
+    </div> 
+</section>
