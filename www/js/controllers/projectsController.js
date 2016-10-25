@@ -10,6 +10,7 @@ femetromAppControllers.controller('ProjectsController', function ProjectsControl
   		deviceReady = true;
 	});
    $scope.downloadDocument = function(docURL, projectId) {
+   	alert("Download Function");
 		var plat = device.platformm;
 		if(plat == "iOS"){
 	      var fileURL = cordova.file.dataDirectory + "files/pdf/proyecto" + projectId + ".pdf";
