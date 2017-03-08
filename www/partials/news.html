@@ -5,13 +5,18 @@
 				<h1><span>Noticias</span></h1>
 			</div>
 			<div class="bottom">
+				<div class="loading-screen">
+					<i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+					<span class="sr-only">Buscando...</span>
+				</div>
 				<ul class="newsList">
 			        <li ng-animate="animate" class="docu" ng-repeat="item in news">
 			            <h2>{{item.title}}</h2>
+			            <h3>{{item.field_fecha}}</h3>
 			            <p ng-bind-html="item.field_fecha_noticia"></p>
-			            <p>{{item.field_cuerpo_noticia}}</p>
+			            <p>{{item.field_cuerpo}}</p>
 			            <img ng-if="item.field_imagen_noticia" src="{{item.field_imagen_noticia}}" alt="">
-			            <button ng-if="item.field_ver_mas" ng-click="openNews(item.field_ver_mas)">Ver Más</button>
+			            <button ng-click="openNews(item.path)">Ver Más</button>
 			        </li>
 			    </ul>
 			</div>

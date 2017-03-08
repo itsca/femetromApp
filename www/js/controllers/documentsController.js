@@ -3,8 +3,10 @@ femetromAppControllers.controller('DocController', function DocController($scope
    var deviceReady = false;
    //Functions
    $scope.openDocument = function(docURL) {
-   	 documentsFactory.setDocUrl(docURL);
-   	 $location.url("/document");
+   	 /*documentsFactory.setDocUrl(docURL);
+   	 $location.url("/document");*/
+   	 var href = docURL;
+   	 var ref = cordova.InAppBrowser.open(href, '_system', 'location=yes');
    };
    ionic.Platform.ready(function() {
   		deviceReady = true;
@@ -74,5 +76,6 @@ femetromAppControllers.controller('DocController', function DocController($scope
    };
    documentsFactory.getDocuments().success(function(data) {
 	    	$scope.documents = data;
+	    	jQuery(".loading-screen").hide();
 	    })
 });

@@ -12,11 +12,16 @@
 				</div>
 			</div>
 			<div class="bottom">
+				<div class="loading-screen">
+					<i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+					<span class="sr-only">Buscando...</span>
+				</div>
 				<ul class="docList">
 			        <li ng-animate="animate" class="docu" ng-repeat="item in documents | filter: query | filter: showInsti | filter: showType | orderBy: docOrder">
 			            <h2>{{item.title}}</h2>
 			            <p>{{item.field_descripcion}}</p>
-			            <button ng-click="downloadDocument(item.field_archivos_de_prueba, item.nid)">Ver Documento</button>
+			            <button ng-click="openDocument(item.field_documento)">Ver Proyecto</button>
+			            <!--<button ng-click="downloadDocument(item.field_archivos_de_prueba, item.nid)">Ver Documento</button>-->
 			        </li>
 			    </ul>
 			</div>

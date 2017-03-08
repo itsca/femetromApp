@@ -10,11 +10,18 @@
 			</div>
 			<div class="bottom">
 				<ul class="docList">
+					<div class="loading-screen">
+						<i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+						<span class="sr-only">Buscando...</span>
+					</div>
 			        <li ng-animate="animate" class="docu" ng-repeat="item in projects | filter: query | filter: showType | orderBy: docOrder">
 			            <h2>{{item.title}}</h2>
+			            <h3>Objetivo:</h3>
+			            <p ng-bind-html="item.field_objetivo"></p>
 			            <h3>Estado:</h3>
-			            <p ng-bind-html="item.field_situacion_actual"></p>
-			            <button ng-click="downloadDocument(item.field_pdf_del_proyecto, item.nid)">Ver Proyecto</button>
+			            <p ng-bind-html="item.field_situacion_actual_"></p>
+			            <button ng-click="openDocument(item.field_pdf_del_proyecto)">Ver Proyecto</button>
+			            <!--<button ng-click="downloadDocument(item.field_pdf_del_proyecto, item.nid)">Ver Proyecto</button>-->
 			        </li>
 			    </ul>
 			</div>

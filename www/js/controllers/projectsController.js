@@ -3,14 +3,15 @@ femetromAppControllers.controller('ProjectsController', function ProjectsControl
    var deviceReady = false;
    //Functions
    $scope.openDocument = function(docURL) {
-   	 documentsFactory.setDocUrl(docURL);
-   	 $location.url("/document");
+   	 /*documentsFactory.setDocUrl(docURL);
+   	 $location.url("/document");*/
+   	 var href = docURL;
+   	 var ref = cordova.InAppBrowser.open(href, '_system', 'location=yes');
    };
    ionic.Platform.ready(function() {
   		deviceReady = true;
 	});
    $scope.downloadDocument = function(docURL, projectId) {
-   	alert("Download Function");
 		var plat = device.platformm;
 		if(plat == "iOS"){
 	      var fileURL = cordova.file.dataDirectory + "files/pdf/proyecto" + projectId + ".pdf";
@@ -76,5 +77,6 @@ femetromAppControllers.controller('ProjectsController', function ProjectsControl
 
    projectsFactory.getProjects().success(function(data) {
 	    	$scope.projects = data;
+	    	jQuery(".loading-screen").hide();
 	    })
 });

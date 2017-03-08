@@ -2,7 +2,7 @@ femetromAppServices.factory('newsFactory', function newsFactory($http) {
 	var currNewsURL,
 	getNews = function() {
 	    var result = {};
-	    var url = 'http://javierescalante.info/drupal8/noticias';
+	    var url = 'http://www.femetrom.go.cr/es/noticias-json';
 	    result = $http.get(url);
 	    //console.debug(result);
 	    return result

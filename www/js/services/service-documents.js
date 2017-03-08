@@ -2,7 +2,7 @@ femetromAppServices.factory('documentsFactory', function documentsFactory($http)
 	var currDocURL,
 	getDocuments = function() {
 	    var result = {};
-	    var url = 'http://javierescalante.info/drupal8/documentos';
+	    var url = 'http://www.femetrom.go.cr/es/documentos-json';
 	    result = $http.get(url);
 	    //console.debug(result);
 	    return result
